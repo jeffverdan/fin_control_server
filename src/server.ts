@@ -26,7 +26,7 @@ const allowedOrigins = (process.env.CORS_ORIGINS || "")
 
 app.use(cors());
 
-app.get(`/`, (req, res) => {
+app.get(`${apiPrefix}/`, (req, res) => {
   res.json({ status: "ok" });
 });
 
