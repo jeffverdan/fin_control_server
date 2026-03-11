@@ -19,11 +19,6 @@ const app = express();
 const apiPrefix = "/api";
 
 app.use(express.json());
-
-const allowedOrigins = (process.env.CORS_ORIGINS || "")
-  .split(",")
-  .map(o => o.trim());
-
 app.use(cors());
 
 app.get(`${apiPrefix}/`, (req, res) => {
@@ -1251,13 +1246,13 @@ app.get(`${apiPrefix}/dashboard`, requireAuth, async (req: AuthedRequest, res) =
 });
 
 if (!process.env.VERCEL) {
-  const port = Number(process.env.PORT || "3001");
-  app.listen(port, () => {
-    console.log(`FinControl API listening on port ${port}`);
-    console.log(`API Prefix: ${apiPrefix}`);
-    console.log(`Environment: ${process.env.NODE_ENV || "development"}`);
-    console.log(`URL: http://localhost:${port}${apiPrefix}/health`);
-  });
+  // const port = Number(process.env.PORT || "3001");
+  // app.listen(port, () => {
+  //   console.log(`FinControl API listening on port ${port}`);
+  //   console.log(`API Prefix: ${apiPrefix}`);
+  //   console.log(`Environment: ${process.env.NODE_ENV || "development"}`);
+  //   console.log(`URL: http://localhost:${port}${apiPrefix}/health`);
+  // });
 }
 
 export default app;
