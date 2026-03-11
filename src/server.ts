@@ -26,6 +26,10 @@ app.use(
   })
 );
 
+app.get(`/`, (req, res) => {
+  res.json({ status: "ok" });
+});
+
 const DEFAULT_CATEGORIES = [
   { name: "Alimentação", icon: "utensils", color: "#059669" },
   { name: "Moradia", icon: "home", color: "#0EA5E9" },
