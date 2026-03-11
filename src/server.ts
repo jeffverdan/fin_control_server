@@ -16,7 +16,7 @@ import {
 import { addMonths, startOfMonth, endOfMonth, monthLabel } from "./utils/date.js";
 
 const app = express();
-const apiPrefix = "/api";
+const apiPrefix = "";
 
 app.use(express.json());
 app.use(cors());
